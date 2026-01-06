@@ -14,7 +14,7 @@ const saveInitialsBtn = document.getElementById("saveInitialsBtn");
 const photoInput = document.getElementById("studentPhoto");
 const photoPreview = document.getElementById("photoPreview");
 
-const API_URL = "https://script.google.com/macros/s/AKfycbyCz6NTz7LQv3i548TlkbxU8kZaDh_sq5ymyiT2-cWknNZEDA9sBK8kg1iuWD1yMis/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbynxfLA0vPvZNUz8KqOsoy7SZkXGnEWN038bwejEU-_DOVAzNYZR2QGSyvIR4rerTXm/exec";
 
 let photoBase64 = null;
 
@@ -234,5 +234,6 @@ window.addEventListener("offline", () => {
 updateOfflineCount();
 renderOfflineList();
 syncBtn.hidden = !navigator.onLine;
+
 
 
