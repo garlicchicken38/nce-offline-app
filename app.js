@@ -187,10 +187,15 @@ const base64Data = record.Student_Photo_Base64.split(",")[1];
       record.Submission_Status = "Uploaded";
       record.Student_Photo_URL = "See Drive folder";
 
-      await fetch(API_URL, {
-        method: "POST",
-        body: JSON.stringify(record)
-      });
+     await fetch(API_URL, {
+  method: "POST",
+  mode: "no-cors",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(record)
+});
+
 
     } catch (err) {
       console.error(err);
@@ -229,4 +234,5 @@ window.addEventListener("offline", () => {
 updateOfflineCount();
 renderOfflineList();
 syncBtn.hidden = !navigator.onLine;
+
 
