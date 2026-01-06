@@ -161,7 +161,14 @@ syncBtn.onclick = async () => {
   for (const record of records) {
     try {
       // 1️⃣ Upload photo (NO-CORS, fire-and-forget)
-      const base64Data = record.Student_Photo_Base64.split(",")[1];
+      if (!record.Student_Photo_Base64) {
+  console.warn("Skipping record without photo:", record.Application_ID);
+  remaining.push(record);
+  continue;
+}
+
+const base64Data = record.Student_Photo_Base64.split(",")[1];
+
 
       await fetch(API_URL + "?action=uploadPhoto", {
         method: "POST",
@@ -222,3 +229,4 @@ window.addEventListener("offline", () => {
 updateOfflineCount();
 renderOfflineList();
 syncBtn.hidden = !navigator.onLine;
+
