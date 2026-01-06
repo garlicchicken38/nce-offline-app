@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NCE Application</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Simple styling -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SCREEN 1: HOME -->
+  <section id="home-screen">
+    <h1>NCE Application</h1>
+<label>Staff Initials</label>
+<input type="text" id="staffInitials" placeholder="e.g. RA" maxlength="3">
+<button id="saveInitialsBtn">Save Initials</button>
+    <button id="newAppBtn">New Application</button>
+    <p id="offlineCount">Offline Applications: 0</p>
+    <ul id="offlineList" style="margin-top:15px;"></ul>
+    <button id="syncBtn" hidden>Sync Now</button>
+  </section>
+
+  <!-- SCREEN 2: SINGLE FORM -->
+  <section id="form-screen" hidden>
+    <h2>Student Application Form</h2>
+
+    <!-- Sections will be filled later -->
+    <form id="applicationForm">
+
+  <h3>Personal Information</h3>
+  <label>Last Name *</label>
+  <input type="text" name="Last_Name" required>
+
+  <label>First Name *</label>
+  <input type="text" name="First_Name" required>
+
+  <label>Middle Name</label>
+  <input type="text" name="Middle_Name">
+
+  <label>Birth Date *</label>
+  <input type="date" name="Birth_Date" required>
+
+  <label>Sex *</label>
+  <select name="Sex" required>
+    <option value="">-- Select --</option>
+    <option>Male</option>
+    <option>Female</option>
+  </select>
+
+  <label>Learner’s Reference No. *</label>
+  <input type="text" name="Learners_Reference_No" required>
+
+  <label>City / Municipality *</label>
+  <input type="text" name="City_Municipality" required>
+
+  <h3>Contact Information</h3>
+  <label>Contact Numbers *</label>
+  <input type="text" name="Contact_Numbers" required>
+
+  <label>Primary Email</label>
+  <input type="email" name="Primary_Email">
+
+  <label>Secondary Email</label>
+  <input type="email" name="Secondary_Email">
+
+  <label>FB Messenger Name / Link</label>
+  <input type="text" name="FB_Messenger_Name_or_Link">
+
+  <h3>Grade 5 School Information</h3>
+  <label>Grade 5 School Name *</label>
+  <input type="text" name="Grade5_School_Name" required>
+
+  <label>School Address *</label>
+  <input type="text" name="School_Address" required>
+
+  <label>School Contact Nos.</label>
+  <input type="text" name="School_Contact_Nos">
+
+  <label>School Type *</label>
+  <select name="School_Type" required>
+    <option value="">-- Select --</option>
+    <option>Public</option>
+    <option>Private</option>
+  </select>
+
+  <label>Grade 5 Math Final *</label>
+  <input type="number" name="Grade5_Math_Final" required>
+
+  <label>Grade 5 Science Final *</label>
+  <input type="number" name="Grade5_Science_Final" required>
+
+  <label>Upper 10% Certification</label>
+  <select name="Upper_10_Percent_Cert">
+    <option>No</option>
+    <option>Yes</option>
+  </select>
+
+  <h3>Campus Preference & Declarations</h3>
+  <label>Preferred Campus *</label>
+  <select name="Preferred_Campus" required>
+    <option value="">-- Select --</option>
+    <option>Main Campus – Diliman</option>
+    <option>Southern Mindanao – Davao City</option>
+    <option>Central Visayas – Cebu</option>
+    <option>Western Visayas – Iloilo</option>
+    <option>CAR – Baguio</option>
+  </select>
+
+  <label>Filipino Citizen? *</label>
+  <select name="Filipino_Citizen" required>
+    <option value="">-- Select --</option>
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+
+  <label>First time enrolling in Grade 7? *</label>
+  <select name="First_Time_Grade7" required>
+    <option value="">-- Select --</option>
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+
+<h3>Student Photo</h3>
+
+<input type="file" id="studentPhoto" accept="image/*" capture="environment">
+
+<img id="photoPreview" style="width:100%; margin-top:10px; display:none;">
+
+
+  <h3>Parent Certification</h3>
+  <label>Parent Full Name *</label>
+  <input type="text" name="Parent_Full_Name" required>
+
+  <label>Parent Consent *</label>
+  <select name="Parent_Consent" required>
+    <option value="">-- Select --</option>
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+
+</form>
+
+
+    <button id="saveBtn">Save Application</button>
+    <button id="backBtn">Back to Home</button>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

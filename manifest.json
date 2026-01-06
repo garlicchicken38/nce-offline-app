@@ -1,0 +1,8 @@
+{
+  "name": "NCE Offline Application",
+  "short_name": "NCE App",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a4ea1"
+}
